@@ -66,12 +66,16 @@ function drawPaddle(){
     c.stroke();
 }
 function draw() {
-    c.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
     drawSpike();
-    animate();
 }
-draw();
+function animate()
+{
+    requestAnimationFrame(animate)
+    c.clearRect(0,0,canvas.width,canvas.height);
+    yR = -Rdy
+    draw();
+}
 
 
